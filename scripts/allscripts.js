@@ -119,7 +119,7 @@ window.addEventListener("load", addDarkmodeWidget);*/
 window.addEventListener("load", addSidebar());
 
 //Get text from URL
-getText("//itspablo.glitch.me/status");
+getText("//itspablo.glitch.me/status.txt");
 
 async function getText(file) {
   let x = await fetch(file);
