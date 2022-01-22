@@ -113,3 +113,4 @@ function $window(html, title) {
         winMain.resizable();
     },
 
+$(".title-bar-controls div [aria-label="Close"] button").on("click", function(){this.parentNode.removeChild(this)})
