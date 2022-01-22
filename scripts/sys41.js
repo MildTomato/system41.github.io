@@ -78,3 +78,38 @@ if (nav.indexOf("Firefox") > -1) {
 } else {
   itsp.user.navigator = "unknown";
 }
+
+function $window(html, title) {
+      var winMain = document.createElement("div");
+      var titleBar = document.createElement("div");
+      var titleBarText = document.createElement("div");
+      var titleBarIcon = null; //for now
+      var titleBarControls = document.createElement("div");
+      var titleBarControlsMinimize = document.createElement("button");
+      var titleBarControlsMaximize = document.createElement("button");
+      var titleBarControlsClose = document.createElement("button");
+      var winContent = document.createElement("div");
+
+      titleBar.append(winMain);
+      winContent.append(winMain);
+      titleBarText.append(titleBar);
+      titleBarControls.append(titleBar);
+      titleBarControlsMaximize.append(titleBarControls);
+      titleBarControlsMinimize.append(titleBarControls);
+      titleBarControls.append(titleBarControlsClose);
+
+      titleBar.classList.add("title-bar");
+      titleBarText.classList.add("title-bar-text");
+      titleBarText.innerText = title;
+      titleBarControls.classList.add("title-bar-controls");
+      titleBarControlsClose.setAttribute("aria-label", "Close");
+      titleBarControlsMaximize.setAttribute("aria-label", "Maximize");
+      titleBarControlsMinimize.setAttribute("aria-label", "Minimize");
+      winContent = html;
+      winContent.classList.add("window-body");
+
+      winMain.appendChild(document.body);
+        winMain.draggable();
+        winMain.resizable();
+    },
+
