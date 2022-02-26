@@ -1,1 +1,0 @@
-Although it may be hidden, the font the site uses is stored here.
